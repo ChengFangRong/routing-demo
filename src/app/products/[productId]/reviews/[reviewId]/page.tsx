@@ -1,9 +1,17 @@
+import { notFound } from "next/navigation";
+
 export default function ReviewDetails({params} : 
     {params: {
         productId: string, 
         reviewId: string}
 }) {
-    return <h1>
+
+    if (parseInt(params.reviewId) > 1000) {
+        notFound(); // 404 page
+}
+    return ( 
+    <h1>
         review {params.reviewId} for product {params.productId}
     </h1>
+    );
 }
