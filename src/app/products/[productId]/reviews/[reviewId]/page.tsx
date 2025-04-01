@@ -1,3 +1,4 @@
+"use client";
 import { notFound } from "next/navigation";
 
 function getRandomInt(count: number) {
@@ -14,7 +15,7 @@ export default function ReviewDetails({params} :
     if (random === 1) {
         throw new Error("Error loading review");
     }
-    
+
     if (parseInt(params.reviewId) > 1000) {
         notFound(); // 404 page
 }
